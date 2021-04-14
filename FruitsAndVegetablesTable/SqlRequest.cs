@@ -11,14 +11,12 @@ namespace FruitsAndVegetablesTable
         public string Name { get; set; }
         public string Request { get; set; }
 
-
         public SqlRequest(string name, string sqlRequest)
         {
             Name = name;
             Request = sqlRequest;
         }
         
-
         public override string ToString()
         {
             return Name;

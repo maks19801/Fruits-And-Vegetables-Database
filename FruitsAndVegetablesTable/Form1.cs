@@ -15,11 +15,12 @@ namespace FruitsAndVegetablesTable
 {
     public partial class FruitsAndVegetablesForm : Form
     {
-        private readonly string connectionString = ConfigurationManager.ConnectionStrings["FruitsAndVegetablesDatabase"].ConnectionString;
+        private readonly string connectionString = ConfigurationManager.ConnectionStrings["FruitsAndVegetablesDatabase"]
+                                                    .ConnectionString;
         SqlConnection _connection = null;
         SqlDataAdapter dataAdapter = null;
         DataSet  dataSet = null;
-        public readonly List<SqlRequest> _sqlRequests; /*new List<string> { };*/
+        public readonly List<SqlRequest> _sqlRequests;
 
         public FruitsAndVegetablesForm()
         {
@@ -28,7 +29,6 @@ namespace FruitsAndVegetablesTable
             _connection = new SqlConnection(connectionString);
 
             sqlRequestsComboBox.Items.AddRange(_sqlRequests.ToArray());
-
         }
 
         private List<SqlRequest> GetSqlRequests()
